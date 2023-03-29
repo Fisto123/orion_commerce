@@ -7,7 +7,7 @@ const Categories = () => {
       <h3 className="py-3 px-8 font-bold text-2xl border border-b-black mb-5">
         Shop deals by categories
       </h3>
-      <div className="grid md:grid-cols-3 sm:grid-cols-2 gap-2 mx-auto">
+      <div className="grid md:grid-cols-3 sm:grid-cols-1 gap-2 mx-auto">
         <div className="bg-[#FFE2E5]  mx-auto  w-[300px] rounded-lg h-[396px] hover:scale-105 ease-in duration-300">
           <div className="">
             <img

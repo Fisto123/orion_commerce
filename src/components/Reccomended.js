@@ -8,7 +8,7 @@ const Reccomended = () => {
         <h4 className="font-bold p-5 border-2 border-b-black">
           RECCOMENDED FOR YOU
         </h4>
-        <div className="grid lg:grid-cols-6 md:grid-cols-4 sm:grid-cols-2  mx-auto gap-2 ">
+        <div className="grid lg:grid-cols-6 md:grid-cols-4 sm:grid-cols-1  mx-auto gap-2 ">
           <ReccommendedCard />
           <ReccommendedCard />
           <ReccommendedCard />

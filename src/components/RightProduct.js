@@ -32,7 +32,7 @@ const RightProduct = ({ index, product }) => {
     <div className=" w-full h-auto">
       <div className="p-4 flex flex-col">
         <div className="flex justify-between">
-          <h3 className="font-bold tracking-widest sm:mx-auto md:m-0">
+          <h3 className="font-bold tracking-widest  md:m-0">
             {product[index]?.name}
           </h3>
           <MdOutlineFavoriteBorder
@@ -43,37 +43,31 @@ const RightProduct = ({ index, product }) => {
             onClick={handleLike}
           />
         </div>
-        <p className="text-red-600 font-bold tracking-wider pt-1 sm:mx-auto md:m-0">
+        <p className="text-red-600 font-bold tracking-wider pt-1  md:m-0">
           {product[index]?.price}
         </p>
-        <div className="sm:mx-auto sm:items-center sm:text-center md:text-start">
+        <div className="  md:text-start">
           <div className="flex-flex-col py-6 ">
-            <div className=" sm:mx-auto max-w-[550px] md:m-0  sm:px-20 md:px-0 ">
+            <div className="  max-w-[550px] md:m-0   md:px-0 ">
               <div className="flex   ">
-                <h5 className="py-2 text-sm mr-4 sm:px-10 md:px-0 ">
-                  Availability:
-                </h5>
+                <h5 className="py-2 text-sm mr-4  md:px-0 ">Availability:</h5>
                 <h5 className="py-2 text-sm ">
                   {product[index]?.availability}
                 </h5>
               </div>
               <div className="flex ">
-                <h5 className="py-2 text-sm mr-4 sm:px-10 md:px-0 ">
-                  Category:
-                </h5>
+                <h5 className="py-2 text-sm mr-4  md:px-0 ">Category:</h5>
                 <h5 className="py-2 text-sm  ">{product[index]?.category}</h5>
               </div>
               <div className="flex">
-                <h5 className="py-2 text-sm mr-4 sm:px-10 md:px-0 ">
-                  Free shipping:
-                </h5>
+                <h5 className="py-2 text-sm mr-4  md:px-0 ">Free shipping:</h5>
                 <h5 className="py-2 text-sm font-bold">
                   {product[index]?.description}
                 </h5>
               </div>
             </div>
 
-            <div className="bg-gray-100 w-[100px] mt-6 p-2 flex justify-between sm:mx-auto md:m-0">
+            <div className="bg-gray-100 w-[100px] mt-6 p-2 flex justify-between  md:m-0">
               <h3
                 className="text-blue-500 cursor-pointer text-xl"
                 onClick={() => handleCount("dec")}
