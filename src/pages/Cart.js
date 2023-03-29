@@ -38,10 +38,10 @@ const Cart = () => {
               <CartItems />
             </div>
           </div>
-          <div className="md:col-span-1 sm:col-span-2 xs:col-span-2">
+          <div className="md:col-span-1 sm:col-span-2 ">
             <div className="shadow-xl h-auto ">
               <div className="m-3 flex flex-col py-3">
-                <div className="flex justify-between py-3 font-semibold text-gray-500">
+                <div className="flex justify-between py-3 font-semibold text-gray-500 ">
                   <div>Subtotal</div>
                   <div>$998</div>
                 </div>
