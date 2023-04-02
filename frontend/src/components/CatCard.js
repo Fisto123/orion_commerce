@@ -15,7 +15,7 @@ const CatCard = ({ items, isLoading, title }) => {
       </div>
 
       {isLoading ? (
-        <Loading count={10} />
+        <Loading count={5} />
       ) : (
         <Swiper
           modules={[Navigation, Pagination, Scrollbar, A11y]}

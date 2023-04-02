@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import { useQuery } from "react-query";
 import BlackFriday from "../components/BlackFriday";
 import CatCard from "../components/CatCard";
@@ -33,9 +33,7 @@ const Home = () => {
         items={filteredData}
         isLoading={isLoading}
       />
-
       <BlackFriday />
-
       <Reccomended />
       <Footer2 />
     </div>
