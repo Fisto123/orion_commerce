@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from "react";
 import { BsArrowBarLeft, BsArrowReturnRight } from "react-icons/bs";
-import { MdDeleteOutline } from "react-icons/md";
 import { useDispatch, useSelector } from "react-redux";
 import { Link } from "react-router-dom";
 import CartItems from "../components/CartItems";
@@ -32,12 +31,6 @@ const Cart = () => {
                   <h3 className="font-bold text-sm">Back to Shopping</h3>
                 </div>
               </Link>
-              <div className="absolute right-0">
-                <MdDeleteOutline
-                  size={25}
-                  className="text-red-600 items-center mr-4 hover:scale-105 ease-in duration-300"
-                />
-              </div>
             </div>
             {cart.length === 0 && (
               <>

@@ -41,11 +41,20 @@ const CartItems = ({ cartItems }) => {
               className="md:w-[121px] sm:w-[70px] "
             />
           </div>
-          <div className="flex flex-col mt-7  w-full">
-            <h3 className="font-bold md:text-sm sm:text-xs sm:p-2 text-start  ">
+          <div className="flex flex-col mt-7  w-2/3">
+            <h3 className="font-bold md:text-2xl sm:text-xl sm:p-2 text-start  uppercase ">
               {cartItems?.product?.name}
             </h3>
-            <p className=" font-bold text-sm">${cartItems?.product.price}</p>
+            <h5 className="text-center text-blue-600 font-bold">
+              {cartItems.cartQuantity +
+                "product(s)" +
+                " " +
+                "*" +
+                " " +
+                cartItems.product.price}
+              = ${cartItems.cartQuantity * cartItems.product.price}
+            </h5>
+            ;{" "}
           </div>
           <div className="bg-gray-100 absolute bottom-0 right-0 m-1 w-[100px] mt-6 md:p-2  flex justify-between">
             <h3
@@ -69,18 +78,8 @@ const CartItems = ({ cartItems }) => {
             className="text-red-600 items-center mr-4 hover:scale-105 ease-in duration-300 absolute top-0 right-0"
           />
         </div>
-        <h5 className="text-center text-blue-600 font-bold">
-          {cartItems.cartQuantity +
-            "product(s)" +
-            " " +
-            "*" +
-            " " +
-            cartItems.product.price}
-          = ${cartItems.cartQuantity * cartItems.product.price}
-        </h5>
       </div>
     </div>
   );
 };
-
 export default CartItems;
