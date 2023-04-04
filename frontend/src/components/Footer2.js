@@ -3,35 +3,30 @@ import { FaFacebookF, FaInstagram, FaTwitter } from "react-icons/fa";
 
 const Footer2 = () => {
   return (
-    <div className="w-full bg-slate-50 shadow-lg h-auto items-center justify-center py-12 absolute  ">
-      <div className="max-w-[1300px] mx-auto  ">
-        <div className=" justify-between text-white grid md:grid-cols-3 ">
-          <div className="items-center  w-full  ">
-            <h1 className="text-black items-center font-bold text-3xl w-[192px] h-[58px] ">
-              ORION
-            </h1>
-          </div>
-          <div className="items-center py-2  w-full">
-            <ul className="flex gap-10 font-bold items-center text-black">
-              <li>TERM OF USE</li>
-              <li>PRIVACY POLICY</li>
-              <li>RETURN POLICY</li>
-            </ul>
-          </div>
-          <div className=" px-20 text-right  w-full ">
-            <ul className="flex gap-6 pr-3 py-2 text-black">
-              <li>
-                <FaFacebookF size={30} />
+    <div className="w-full bg-slate-500 shadow-lg h-62  items-center ">
+      <div className="items-center flex justify-between md:flex-row sm:flex-col max-w-[1240px] mx-auto ">
+        <div className=" w-1/3 items-center mx-auto text-center ">
+          <img src="/img/ORION.png" alt="" className="items-center" />
+        </div>
+        <div className="w-2/3 items-center  flex gap-8  ">
+          <h3 className="md:text-2xl sm:text-sm text-white items-center ">
+            Term of use
+          </h3>
+          <h3 className="md:text-2xl sm:text-sm text-white">Privacy Policy</h3>
+          <h3 className="md:text-2xl sm:text-sm text-white">Return Policy</h3>
+          <div className="  w-1/3 mx-auto items-center ">
+            <ul className="flex  text-center w-full  mx-auto  gap-12 items-center mt-2 ">
+              <li className="w-[10px] h-[36px] ">
+                <FaFacebookF size={30} className="w-[20px] text-blue-800" />
               </li>
-              <li>
-                <FaTwitter size={30} />
+              <li className="w-[10px]  h-[36px]">
+                <FaInstagram size={30} className=" w-[20px] text-blue-800" />
               </li>
-              <li>
-                <FaInstagram size={30} />
+              <li className="w-[10px]  h-[36px] text-black">
+                <FaTwitter className="w-[20px]" size={30} />
               </li>
             </ul>
           </div>
-          {/* <h1 className="text-white items-center">ORION</h1> */}
         </div>
       </div>
     </div>

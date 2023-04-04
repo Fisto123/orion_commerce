@@ -5,7 +5,7 @@ import { MdArrowDownward, MdOutlineFavoriteBorder } from "react-icons/md";
 import { useDispatch } from "react-redux";
 import { Link } from "react-router-dom";
 import { addToCart } from "../redux/cartSlice";
-const RightProduct = ({ index, product }) => {
+const RightProduct = ({ product }) => {
   const [showDesc, setShowDesc] = useState(false);
   const [showPolicy, setShowPolicy] = useState(false);
   const [color, setColor] = useState(false);
@@ -50,10 +50,10 @@ const RightProduct = ({ index, product }) => {
         <p className="text-red-600 font-bold tracking-wider pt-1  md:m-0">
           ${product?.price}
         </p>
-        <div className="  md:text-start">
+        <div className="  md:text-start s">
           <div className="flex-flex-col py-6 ">
             <div className="  max-w-[550px] md:m-0   md:px-0 ">
-              <div className="flex   ">
+              <div className="flex  ">
                 <h5 className="py-2 text-sm mr-4  md:px-0 ">Availability:</h5>
                 <h5 className="py-2 text-sm ">{product?.inStock}</h5>
               </div>

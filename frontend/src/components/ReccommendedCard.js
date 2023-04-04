@@ -1,17 +1,22 @@
 import { Card, CardMedia, Typography } from "@mui/material";
 import React from "react";
 import { MdOutlineFavoriteBorder } from "react-icons/md";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { slicy } from "../utils/slice";
 import Loading from "./Loading";
 
 const ReccommendedCard = ({ items, isLoading }) => {
+  const nav = useNavigate();
+  const handleClick = () => {
+    nav(`/product/${items?._id}`);
+    window.location.reload();
+  };
   return (
-    <Link to={`/product/${items?._id}`}>
+    <Link onClick={handleClick}>
       {isLoading ? (
         <Loading count={30} />
       ) : (
-        <div className="max-w-[940px] mx-auto h-[40vh] py-20 mt-10 ">
+        <div className="max-w-[940px] mx-auto h-[40vh] py-0 mt-10 ">
           <Card
             sx={{
               width: "183px",

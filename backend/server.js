@@ -4,16 +4,25 @@ import cors from "cors";
 import dotenv from "dotenv";
 import express from "express";
 import productRouter from "./routes/product.js";
+import orderRouter from "./routes/order.js";
+
 dotenv.config();
 
 const app = express();
 app.use(express.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json({ limit: "30mb", extended: true }));
-app.use(cors({ origin: "https://orioncommerce-customer.netlify.app/", credentials: true }));
+app.use(
+  cors({
+    origin: "orioncommerce-customer.netlify.app",
+    credentials: true,
+  })
+);
 
 /* ROUTES */
 app.use("/api", productRouter);
+app.use("/api", orderRouter);
+
 /* ROUTES */
 
 /* MONGOOSE SETUP */

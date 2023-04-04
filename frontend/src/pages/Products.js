@@ -15,7 +15,9 @@ const Products = () => {
   const category = parts[parts.length - 1];
   const [min, setMin] = useState("");
   const [max, setMax] = useState("");
-
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
   const { isLoading, error, data, refetch } = useQuery({
     queryKey: [category, sort],
     queryFn: () =>
@@ -45,7 +47,7 @@ const Products = () => {
   };
 
   return (
-    <div className="w-full md:h-[130vh] pb-20 ">
+    <div className="w-full h-auto pb-20 ">
       <div className="max-w-[1240px]  mx-auto ">
         <div className=" mt-10 py-7 max-w-[60px] ">
           <ul className="flex justify-between font-semi-bold text-gray-600 gap-2 font-semibold">
@@ -138,9 +140,6 @@ const Products = () => {
             </div>
           </div>
         </div>
-      </div>
-      <div className="py-10">
-        <Footer2 />
       </div>
     </div>
   );

@@ -35,7 +35,6 @@ const Home = () => {
       />
       <BlackFriday />
       <Reccomended />
-      <Footer2 />
     </div>
   );
 };

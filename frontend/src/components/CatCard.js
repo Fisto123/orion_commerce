@@ -11,7 +11,7 @@ const CatCard = ({ items, isLoading, title }) => {
   return (
     <div className=" max-w-[940px] mx-auto h-[40vh]  mt-10">
       <div className="pb-10">
-        <h4 className="font-bold border-b-2 border-b-black">{title}</h4>
+        <h4 className="font-bold border-b-2 border-b-gray">{title}</h4>
       </div>
 
       {isLoading ? (

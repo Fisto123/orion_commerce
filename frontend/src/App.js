@@ -13,6 +13,10 @@ import "react-toastify/dist/ReactToastify.css";
 import { QueryClient, QueryClientProvider } from "react-query";
 import { Error } from "./components/Error";
 import Search from "./pages/Search";
+import Footer2 from "./components/Footer2";
+import Categories from "./pages/Categories";
+import Footer from "./components/Footer";
+import Contact from "./pages/Contact";
 
 function App() {
   const queryClient = new QueryClient();
@@ -50,12 +54,20 @@ function App() {
           element: <Order />,
         },
         {
+          path: "/categories",
+          element: <Categories />,
+        },
+        {
           path: "/error",
           element: <Error />,
         },
         {
           path: "/search",
           element: <Search />,
+        },
+        {
+          path: "/contact",
+          element: <Contact />,
         },
       ],
     },

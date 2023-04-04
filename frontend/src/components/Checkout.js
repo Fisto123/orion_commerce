@@ -1,64 +1,117 @@
-import React from "react";
+import React, { useState } from "react";
 import { BsArrowLeft } from "react-icons/bs";
 import { MdCancel } from "react-icons/md";
-import { Link } from "react-router-dom";
+import { useDispatch } from "react-redux";
+import { Link, useNavigate } from "react-router-dom";
+import { addorder } from "../redux/orderSlice";
+import { v4 as uuidv4 } from "uuid";
+import { clearCart } from "../redux/cartSlice";
 
 const Checkout = ({ setOpen }) => {
+  const dispatch = useDispatch();
+  const [details, setDetails] = useState([]);
+  const nav = useNavigate();
+  const handleChange = (e) => {
+    setDetails((prev) => {
+      return {
+        ...prev,
+        id: uuidv4(),
+        [e.target.name]: e.target.value,
+      };
+    });
+  };
+  console.log(details);
 
+  const handleAdd = (e, details) => {
+    e.preventDefault();
+    console.log(details);
+    dispatch(addorder(details));
+    nav("/order");
+  };
   return (
     <div>
-      <div className="bg-[#FFFFFF] shadow-xl absolute md:w-1/2 sm:w-full h-auto md:top-[20%] md:left-[30%]  sm:top-[55%] sm:left-[0] p-10 ">
+      <div
+        className={`bg-[#FFFFFF] shadow-xl absolute md:w-1/3 sm:w-full h-auto md:top-[10%] md:left-[30%]  sm:top-[15%] sm:left-[0%] p-10 `}
+      >
         <div className=" mx-auto">
           <div className="flex justify-between">
-            <BsArrowLeft size={20} className="text-blue-500" />
+            <BsArrowLeft
+              size={20}
+              className="text-blue-500"
+              onClick={() => setOpen(false)}
+            />
             <MdCancel
               onClick={() => setOpen(false)}
               size={20}
               className="text-blue-500"
             />
           </div>
-          <p className="font-bold text-blue-500 items-center text-center py-5">
+          <p className="font-bold text-blue-500 items-center text-center py-2">
             Confirm Details
           </p>
-          <div className=" w-full">
-            <div className="flex justify-between md:gap-5 sm:gap-2 sm:flex-col md:flex-row">
+          <div className="mx-auto text-center items-center">
+            <div className="flex justify-between md:flex-row  sm:flex-col gap-3 py-2">
               <input
                 type="text"
-                placeholder="firstname"
-                className="bg-gray-50 shadow-xl p-5 w-full h-[50px] rounded-md border border-rose-300"
+                onChange={handleChange}
+                className="border-1 border-gray-200 rounded-lg p-2 w-full mx-auto"
+                placeholder="username"
+                name="username"
               />
               <input
                 type="text"
-                placeholder="lastname"
-                className="bg-gray-50 shadow-xl md:p-5 sm:p-2 w-full  md:h-[50px] rounded-md border border-rose-300"
+                className="border-1 border-gray-200 p-2 rounded-lg  w-full mx-auto "
+                placeholder="firstname"
+                onChange={handleChange}
+                name="firstname"
               />
             </div>
-            <div className="flex justify-between md:gap-5 sm:gap-2 sm:flex-col md:flex-row py-10">
-              <div className="flex flex-col w-full ">
+            <div className="flex justify-between md:flex-row  sm:flex-col gap-3 py-2">
+              <div className="w-full flex-col">
                 <input
-                  type="email"
-                  placeholder="Email address"
-                  className="bg-gray-50 shadow-xl p-5 w-full h-[50px] rounded-md border border-rose-300"
+                  type="text"
+                  className="border-1 border-gray-200 rounded-lg p-2 w-full mx-auto"
+                  placeholder="lastname"
+                  name="lastname"
+                  onChange={handleChange}
                 />
-                <input
-                  type="number"
-                  placeholder="Mobile Number"
-                  className="bg-gray-50 shadow-xl p-5 mt-10 w-full h-[50px] rounded-md border border-rose-300"
-                />
+                <div className="py-2">
+                  <input
+                    type="email"
+                    className="border-1 border-gray-200 rounded-lg p-2 w-full mx-auto"
+                    placeholder="email"
+                    name="email"
+                    onChange={handleChange}
+                  />
+                </div>
               </div>
-
-              <textarea
-                className="w-full rounded-md border border-rose-300 p-5 sm:h-[60px] md:h-[200px]"
-                name=""
-                id=""
-                cols="30"
-                rows="5"
-                placeholder="Enter your address"
-              ></textarea>
+              <div className="w-full ">
+                <textarea
+                  id=""
+                  className="border-1 border-gray-300 w-full p-1"
+                  cols="30"
+                  rows="5"
+                  placeholder="Enter your address"
+                  onChange={handleChange}
+                  name="address"
+                ></textarea>
+              </div>
+            </div>
+            <div className="flex justify-between md:flex-row  sm:flex-col gap-3 py-2">
+              <input
+                type="number"
+                className="border-1 border-gray-200 p-2 rounded-lg  w-full mx-auto "
+                placeholder="Phone Number"
+                onChange={handleChange}
+                name="phone"
+              />
             </div>
             <div className="mx-auto text-center ">
               <Link to="/order">
-                <button className="sm:w-1/2 md:w-1/4 mx-auto md:p-2 sm:p-1 rounded-md text-white text-center bg-[#33A0FF] font-bold ">
+                <button
+                  onClick={(e) => handleAdd(e, details)}
+                  className="sm:w-1/2 md:w-1/4 mx-auto md:p-2 sm:p-1 rounded-md text-white text-center bg-[#40BFFF] font-bold "
+                >
                   CONFIRM
                 </button>
               </Link>

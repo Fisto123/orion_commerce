@@ -14,7 +14,7 @@ const Reccomended = () => {
   return (
     <div className="w-full h-auto max-w-[1120px] mx-auto ">
       <div className="w-full py-6">
-        <h4 className="font-bold p-5 border-b-2 border-b-black">
+        <h4 className="font-bold p-5 border-b-2 border-b-gray">
           RECCOMENDED FOR YOU
         </h4>
         <div className="grid lg:grid-cols-6 md:grid-cols-3 sm:grid-cols-1  mx-auto gap-2  ">

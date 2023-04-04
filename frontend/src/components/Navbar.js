@@ -22,15 +22,22 @@ const Navbar = () => {
         </div>
         <div className="flex text-center">
           <ul className="s gap-7 text-center hidden lg:flex ">
-            <li className="w-[118px] h-[27px] font-[400] text-[#000000] text-[20px] ">
-              HOME
-            </li>
-            <li className="w-[118px] h-[27px] font-[400] text-[#000000] text-[20px] ">
-              CATEGORIES
-            </li>
-            <li className="w-[118px] h-[27px] font-[400] text-[#000000] text-[20px] ">
-              CONTACTS
-            </li>
+            <Link to="/">
+              <li className="w-[118px] h-[27px] font-[400] text-[#000000] text-[20px] cursor-pointer ">
+                HOME
+              </li>
+            </Link>
+            <Link to="/categories">
+              <li className="w-[118px] h-[27px] font-[400] text-[#000000] text-[20px] cursor-pointer">
+                CATEGORIES
+              </li>
+            </Link>
+            <Link to="/contact">
+              <li className="w-[118px] h-[27px] font-[400] text-[#000000] text-[20px] cursor-pointer">
+                CONTACTS
+              </li>
+            </Link>
+
             <div className="relative">
               <input
                 type="text"

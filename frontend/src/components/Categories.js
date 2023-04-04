@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 const Categories = () => {
   return (
     <div className=" h-auto max-w-[1140px] w-full  mx-auto py-20 ">
-      <h3 className="py-3 px-8 font-bold text-2xl border border-b-black mb-5">
+      <h3 className="py-3 px-8 font-bold text-2xl border-b-2 border-b-gray mb-5">
         Shop deals by categories
       </h3>
       <div className="grid lg:grid-cols-3 md:grid-cols-2 sm:grid-cols-1 gap-2 mx-auto">

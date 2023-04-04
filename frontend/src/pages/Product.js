@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { useQuery } from "react-query";
 import { useNavigate, useParams } from "react-router-dom";
 import { Error } from "../components/Error";
@@ -12,6 +12,10 @@ import { newRequest } from "../utils/newRequest";
 const Product = () => {
   const { id } = useParams();
   const nav = useNavigate();
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
+
   const { isLoading, error, data } = useQuery({
     queryKey: [id],
     queryFn: () =>
@@ -47,7 +51,7 @@ const Product = () => {
   }
 
   return (
-    <div className="w-full md:h-[130vh] pb-20 ">
+    <div className="w-full h-auto ">
       <div className="max-w-[1240px]  mx-auto ">
         <div className=" mt-10 py-7 max-w-[60px] ">
           <ul className="flex justify-between font-semi-bold text-gray-600 gap-2 font-semibold">
@@ -75,8 +79,8 @@ const Product = () => {
             </>
           )}
         </div>
-        <div className="mt-20 py-20 ">
-          <h4 className="font-bold p-5 border-2 border-b-black">
+        <div className="mt-5 py-5 ">
+          <h4 className="font-bold p-5 border-b-2 border-b-gray">
             RECCOMENDED FOR YOU
           </h4>
           <div className="grid lg:grid-cols-4 md:grid-cols-2 p-2 ">
@@ -87,7 +91,6 @@ const Product = () => {
           </div>
         </div>
       </div>
-      <Footer2 />
     </div>
   );
 };
