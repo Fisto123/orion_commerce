@@ -14,7 +14,7 @@ app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json({ limit: "30mb", extended: true }));
 app.use(
   cors({
-    origin: "orioncommerce-customer.netlify.app",
+    origin: "https://orioncommerce-customer.netlify.app/",
     credentials: true,
   })
 );
