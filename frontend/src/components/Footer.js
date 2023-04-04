@@ -2,7 +2,7 @@ import React from "react";
 import { FaFacebookF, FaInstagram, FaTwitter } from "react-icons/fa";
 const Footer = () => {
   return (
-    <div className="w-full  mx-auto items-center  border-md   bg-slate-100">
+    <div className="w-full  mx-auto items-center  border-md  h-90 bg-slate-100">
       <div className="grid md:grid-cols-3  max-w-[1140px] mx-auto gap-1 ">
         <div className=" p-1  w-[160px] items-center">
           <h3 className="text-black font-bold text-5xl w-[180px] ">ORION</h3>

@@ -12,7 +12,7 @@ const ProductSchema = new mongoose.Schema(
         "grocery",
         "drinks",
         "gadgets",
-        "beeauty",
+        "beauty",
       ],
       required: true,
     },

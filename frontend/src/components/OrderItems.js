@@ -1,7 +1,6 @@
 import React, { useState } from "react";
 
 const OrderItems = ({ items }) => {
-  console.log(items);
   return (
     <div>
       <div className=" m-4 border-b-2 border-b-gray-200 relative ">

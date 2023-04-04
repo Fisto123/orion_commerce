@@ -1,5 +1,4 @@
 import React from "react";
-import Footer2 from "../components/Footer2";
 import Products from "./Products";
 
 const Categories = () => {
