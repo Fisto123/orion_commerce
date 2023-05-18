@@ -17,6 +17,13 @@ app.use(cors());
 /* ROUTES */
 app.use("/api", productRouter);
 app.use("/api", orderRouter);
+app.use(function(req, res, next) {
+  res.setHeader(
+    'Content-Security-Policy',
+    "img-src 'self'https://www-konga-com-res.cloudinary.com/;"
+  );
+  next();
+});
 
 /* ROUTES */
 
