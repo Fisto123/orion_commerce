@@ -5,6 +5,8 @@ import dotenv from "dotenv";
 import express from "express";
 import productRouter from "./routes/product.js";
 import orderRouter from "./routes/order.js";
+import payStripeRouter from "./routes/stripe.js";
+import mailRouter from "./routes/mail.js";
 
 dotenv.config();
 
@@ -12,11 +14,14 @@ const app = express();
 app.use(express.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json({ limit: "30mb", extended: true }));
+
 app.use(cors());
 
 /* ROUTES */
 app.use("/api", productRouter);
 app.use("/api", orderRouter);
+app.use("/api/stripe", payStripeRouter);
+app.use("/api", mailRouter);
 
 /* ROUTES */
 
